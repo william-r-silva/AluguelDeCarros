@@ -4,15 +4,18 @@ import com.faraorock.CarroDePrograma.Persistencia.FilialRepository;
 import com.faraorock.CarroDePrograma.Persistencia.MecanicaParceiraRepository;
 import com.faraorock.CarroDePrograma.Persistencia.CarroRepository;
 import com.faraorock.CarroDePrograma.Persistencia.ContratanteRepository;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
+import com.faraorock.CarroDePrograma.View.MainView;
 
 @SpringBootApplication
 public class CarroDeProgramaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CarroDeProgramaApplication.class, args);
+		SpringApplicationBuilder builder = new SpringApplicationBuilder(CarroDeProgramaApplication.class);
+        builder.headless(false);
+        builder.run(args);
 	}
 	
 	@Bean
@@ -23,7 +26,7 @@ public class CarroDeProgramaApplication {
 	
 	@Bean
 	public FilialRepository run2(FilialRepository fr) {
-		
+		MainView.criaUI();
 		return fr;
 	}
 
