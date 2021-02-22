@@ -1,6 +1,8 @@
 package com.faraorock.CarroDePrograma;
 
 import com.faraorock.CarroDePrograma.Persistencia.FilialRepository;
+import com.faraorock.CarroDePrograma.Persistencia.MecanicaParceiraRepository;
+import com.faraorock.CarroDePrograma.Persistencia.CarroRepository;
 import com.faraorock.CarroDePrograma.Persistencia.ContratanteRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,4 +27,15 @@ public class CarroDeProgramaApplication {
 		return fr;
 	}
 
+	@Bean
+	public CarroRepository run3(CarroRepository car) {
+		
+		return car;
+	}
+	
+	@Bean
+	public MecanicaParceiraRepository run4(MecanicaParceiraRepository mpr) {
+		
+		return mpr;
+	}
 }
