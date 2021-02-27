@@ -1,8 +1,11 @@
 package com.faraorock.CarroDePrograma.Models;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,11 +31,11 @@ public class MecanicaParceira {
     @Column(nullable = false)
     private int numero;
     
-    @OneToMany
-    List<Carro> carros;
+    @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="mecanicasParceiras")
+    private List<Carro> carros;
     
-    @ManyToMany
-    List<Filial> filiais;
+    @ManyToMany(mappedBy="mecanicasParceiras", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    private List<Filial> filiais;
 
     public MecanicaParceira(Integer id, String nome, String telefone, String estado, String cidade, String rua, int numero, List<Carro> carros, List<Filial> filiais) {
         this.id = id;

@@ -1,11 +1,14 @@
 package com.faraorock.CarroDePrograma.Models;
 
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -27,12 +30,15 @@ public class Carro {
     @Column(nullable = true)
     private Date dataFinal;
     
-    @ManyToOne
-    MecanicaParceira mecanicasParceiras;
-    @ManyToOne
-    Filial filial;
-    @ManyToOne
-    Contratante contratante;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="mecanica_id", referencedColumnName="id")
+    private MecanicaParceira mecanicasParceiras;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="filial_id", referencedColumnName="id")
+    private Filial filial;
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="contratante_id", referencedColumnName="id")
+    private Contratante contratante;
 
     public Carro(Integer id, String placa, String cor, String modelo, String marca, Date dataInicio, Date dataFinal, MecanicaParceira mecanicasParceiras, Filial filial, Contratante contratante) {
         this.id = id;
