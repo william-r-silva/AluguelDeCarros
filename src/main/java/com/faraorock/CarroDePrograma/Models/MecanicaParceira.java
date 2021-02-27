@@ -34,7 +34,7 @@ public class MecanicaParceira {
     @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="mecanicasParceiras")
     private List<Carro> carros;
     
-    @ManyToMany(mappedBy="mecanicasParceiras", fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @ManyToMany(mappedBy="mecanicasParceiras", cascade=CascadeType.ALL)
     private List<Filial> filiais;
 
     public MecanicaParceira(Integer id, String nome, String telefone, String estado, String cidade, String rua, int numero, List<Carro> carros, List<Filial> filiais) {

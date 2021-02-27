@@ -30,7 +30,7 @@ public class Filial {
     @OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="filial")
     private List<Carro> carros;
     
-    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(
     		name = "filiais_mecanicas",
     		joinColumns = @JoinColumn(name="filial_id", referencedColumnName ="id"),
