@@ -13,6 +13,10 @@ import org.springframework.context.annotation.Bean;
 public class CarroDeProgramaApplication {
     
         public static FilialRepository filialRepository;
+        public static ContratanteRepository contratanteRepository;
+        public static CarroRepository carroRepository;
+        public static MecanicaParceiraRepository mecanicaParceiraRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(CarroDeProgramaApplication.class);
@@ -22,7 +26,7 @@ public class CarroDeProgramaApplication {
 	
 	@Bean
 	public ContratanteRepository run(ContratanteRepository cr) {
-		
+		CarroDeProgramaApplication.contratanteRepository = cr;
 		return cr;
 	}
 	
@@ -60,13 +64,13 @@ public class CarroDeProgramaApplication {
 
 	@Bean
 	public CarroRepository run3(CarroRepository car) {
-		
+		CarroDeProgramaApplication.carroRepository = car;
 		return car;
 	}
 	
 	@Bean
 	public MecanicaParceiraRepository run4(MecanicaParceiraRepository mpr) {
-		
+		CarroDeProgramaApplication.mecanicaParceiraRepository = mpr;
 		return mpr;
 	}
 }

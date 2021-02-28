@@ -98,5 +98,10 @@ public class Filial {
         this.mecanicasParceiras = mecanicasParceiras;
     }
 
+    @Override
+    public String toString() {
+        return id + " - " + estado + " - " + cidade + " - " + cep;
+    }
+
     
 }

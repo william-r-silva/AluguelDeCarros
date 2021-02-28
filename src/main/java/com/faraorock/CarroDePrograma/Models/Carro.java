@@ -53,6 +53,9 @@ public class Carro {
         this.contratante = contratante;
     }
 
+    public Carro() {
+    }
+
     public Integer getId() {
         return id;
     }
