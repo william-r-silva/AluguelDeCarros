@@ -5,6 +5,9 @@
  */
 package com.faraorock.CarroDePrograma.View;
 
+import com.faraorock.CarroDePrograma.CarroDeProgramaApplication;
+import com.faraorock.CarroDePrograma.Models.Filial;
+
 /**
  *
  * @author boder
@@ -37,7 +40,7 @@ public class FilialFrame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cadastrar Filial");
@@ -141,7 +144,14 @@ public class FilialFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         String estado = jTextField1.getText();
+        String cidade = jTextField2.getText();
+        int cep = Integer.parseInt(jTextField3.getText());
+        Filial f = new Filial();
+        f.setEstado(estado);
+        f.setCidade(cidade);
+        f.setCep(cep);
+        CarroDeProgramaApplication.filialRepository.save(f);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

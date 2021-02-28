@@ -129,6 +129,11 @@ public class FilialViewFrame extends javax.swing.JFrame {
         jLabel2.setText("Placa");
 
         jButton4.setText("Limpar Filtros");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -294,6 +299,10 @@ public class FilialViewFrame extends javax.swing.JFrame {
         MecanicaParceiraFrame mpf = new MecanicaParceiraFrame();
         mpf.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        jTextField1.setText("");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

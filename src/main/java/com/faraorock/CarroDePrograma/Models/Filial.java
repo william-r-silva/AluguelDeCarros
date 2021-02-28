@@ -47,6 +47,9 @@ public class Filial {
         this.mecanicasParceiras = mecanicasParceiras;
     }
 
+    public Filial() {
+    }
+
     public Integer getId() {
         return id;
     }

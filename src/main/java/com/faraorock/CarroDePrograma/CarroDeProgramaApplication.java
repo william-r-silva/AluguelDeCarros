@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class CarroDeProgramaApplication {
+    
+        public static FilialRepository filialRepository;
 
 	public static void main(String[] args) {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(CarroDeProgramaApplication.class);
@@ -26,6 +28,7 @@ public class CarroDeProgramaApplication {
 	
 	@Bean
 	public FilialRepository run2(FilialRepository fr) {
+            CarroDeProgramaApplication.filialRepository = fr;
             try {
                 for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                     if ("Nimbus".equals(info.getName())) {
